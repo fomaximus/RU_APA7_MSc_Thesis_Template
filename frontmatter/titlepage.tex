@@ -1,0 +1,44 @@
+% =============================================================================
+% frontmatter/titlepage.tex — Reykjavik University MSc Title Page
+% =============================================================================
+\begin{titlepage}
+  \thispagestyle{empty}%
+  \singlespacing%
+  
+  \begin{center}
+    \drawrulogo{0.38}\par
+    \vspace{0.8cm}
+    
+    {\bfseries\Large \thesisTitle\par}
+    \vspace{0.8cm}
+    
+    {\large \thesisAuthor\par}
+    \vspace{1.0cm}
+    
+    {\large
+      Thesis of \thesisECTS{} ECTS credits submitted to the \thesisSchool{}\\
+      at \thesisUniversity{} in partial fulfillment of\\
+      the requirements for the degree of\\
+      \textbf{\thesisDegreeLong{} (\thesisDegreeAbbrv{}) in \thesisProgram{}}\par
+    }
+    \vspace{0.8cm}
+    
+    {\large \thesisDate\par}
+  \end{center}
+  
+  \vfill
+  
+  \begin{flushleft}
+    \setlength{\parskip}{2pt}%
+    \textbf{Supervisors:}\\[2pt]
+    \thesisSupervisor, \thesisSupervisorRole{}\\
+    \thesisSupervisorAffiliation{}\\[0.5\baselineskip]
+    \ifx\thesisCoSupervisor\empty\else
+    \thesisCoSupervisor, \thesisCoSupervisorRole{}\\
+    \thesisCoSupervisorAffiliation{}\\[0.5\baselineskip]
+    \fi
+    \textbf{Examiner:}\\[2pt]
+    \thesisExaminer, \thesisExaminerRole{}\\
+    \thesisExaminerAffiliation{}\par
+  \end{flushleft}
+\end{titlepage}

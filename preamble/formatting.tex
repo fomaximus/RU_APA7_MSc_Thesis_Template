@@ -1,0 +1,86 @@
+% =============================================================================
+% preamble/formatting.tex — Custom Formatting & Overrides
+% =============================================================================
+
+% --- PDF Metadata & Link Styles (hyperref) -----------------------------------
+\hypersetup{%
+    pdftitle={\thesisTitle},
+    pdfauthor={\thesisAuthor},
+    pdfsubject={\thesisProgram{} Thesis},
+    pdfkeywords={\thesisKeywords},
+    pdfcreator={LuaLaTeX with apa7},
+    pdfproducer={LuaLaTeX},
+    % Link styling: Remove default red/green boxes and use colored text instead.
+    % In a thesis, we want all citations, internal links, and external URLs
+    % to be black (clean print standard).
+    colorlinks=true,
+    linkcolor=black,       % Color of internal links (e.g., sections, figures)
+    citecolor=black,       % Color of citation links
+    urlcolor=black,        % Color of external URLs (including references)
+    hypertexnames=false,   % Prevents duplicate page destination warnings due to Roman/Arabic numbering
+    % Alternative: use "hidelinks" to completely hide all link decorations
+    % hidelinks
+}
+
+% --- Global Justification ---------------------------------------------------
+\AtBeginDocument{\justifying}
+
+% --- Front Matter Page Style -------------------------------------------------
+% Custom command for creating unnumbered front matter sections
+% that still appear in the Table of Contents.
+\newcommand{\frontmattersection}[1]{%
+    \newpage
+    \vspace*{1.8cm}
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+}
+
+% --- Table of Contents Depth -------------------------------------------------
+% Show sections and subsections in ToC (APA levels 1–2)
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{0}  % APA style: no section numbering
+
+% --- Caption Formatting Overrides --------------------------------------------
+% apa7 handles most caption formatting, but ensure figures/tables
+% are numbered within the document scope (not per-section).
+% This is the default behavior in article-based classes.
+
+% --- Block Quotation Adjustments ---------------------------------------------
+% APA 7: Block quotes for 40+ words, indented 0.5 inch from left margin.
+% The apa7 class handles this via the quote environment.
+
+% --- Paragraph Formatting ----------------------------------------------------
+% APA 7: First line of each paragraph indented 0.5 inch.
+% apa7 class sets this automatically. Override only if needed:
+% \setlength{\parindent}{0.5in}
+
+% --- Running Head Adjustment -------------------------------------------------
+% In man mode, the running head is set automatically from \shorttitle.
+% No additional configuration needed.
+
+% --- Footnote Style -----------------------------------------------------------
+% APA 7 uses footnotes sparingly. The apa7 class formats them correctly.
+% To add a footnote: \footnote{Text of the footnote.}
+
+% --- URL Breaking -------------------------------------------------------------
+% Allow URLs to break at any character to prevent overfull hboxes.
+\def\UrlBreaks{\do\/\do-\do.\do=\do_\do?\do\&\do\%\do\a\do\b\do\c\do\d%
+    \do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q%
+    \do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+    \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q%
+    \do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+
+% --- Double-Sided Page Clearing (RU Thesis requirement) -----------------------
+% Forces the next section to start on an odd-numbered (right-hand) page.
+\newcommand{\RUcleardoublepage}{%
+    \clearpage
+    \ifodd\value{page}%
+    \else
+        \thispagestyle{empty}%
+        \hbox{}%
+        \clearpage
+    \fi
+}
+
+% Save standard section command for backmatter (e.g. Index) before appendix overrides it
+\let\StandardFrontmatterSection\section

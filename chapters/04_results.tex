@@ -1,0 +1,96 @@
+% =============================================================================
+% chapters/04_results.tex — Results (Feline Theme)
+% =============================================================================
+
+\section{Results}
+
+This section presents the findings from our mixed-methods investigation of Feline Stakeholder Management (FSM). Quantitative observations are presented first, followed by qualitative thematic findings from meow translation logs.
+
+\subsection{Quantitative Results}
+
+\subsubsection{Descriptive Statistics and Correlations}
+\Cref{tab:descriptives} displays the means, standard deviations, and correlations for the key variables. As expected, treat consumption rate ($T_c$) was strongly and positively correlated with purr volume ($d_{\text{purr}}$) ($r = .82, \pvalue < .01$). Conversely, scratching frequency ($f_{\text{scratch}}$) was negatively correlated with nap time ($N_s$), suggesting that active scratching prevents sleep.
+
+% --- Descriptive statistics and correlations table ---
+\begin{table}[htbp]
+    \caption{Means, Standard Deviations, and Correlations Among Feline Variables}
+    \label{tab:descriptives}
+    \begin{threeparttable}
+        \begin{tabular}{lcccccc}
+            \toprule
+            Variable & $M$ & $SD$ & 1 & 2 & 3 & 4 \\
+            \midrule
+            1. Treat Rate ($T_c$)         & 4.5  & 1.2 & ---   &       &       &      \\
+            2. Purr Volume ($d_{\text{purr}}$) & 45.2 & 8.5 & .82** & ---   &       &      \\
+            3. Scratching Rate ($f_{\text{scratch}}$) & 2.1  & 0.9 & -.12  & -.15  & ---   &      \\
+            4. Nap Time ($N_s$)           & 14.8 & 2.4 & .67** & .55** & -.48* & ---  \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}[flushleft]
+            \small
+            \item \textit{Note.} $N = 5$ cats, monitored over 14 days. Treat rate in treats/min; purr volume in dB; scratching rate in scratches/hour; nap time in hours.
+            \item * \pvalue{} $< .05$. ** \pvalue{} $< .01$.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\subsubsection{Hypothesis Testing}
+We tested five hypotheses regarding feline project management incentives. \Cref{tab:hypothesis} summarizes the structural path analysis.
+
+% --- Hypothesis testing results table ---
+\begin{table}[htbp]
+    \caption{Summary of Feline Hypothesis Testing Results}
+    \label{tab:hypothesis}
+    \begin{threeparttable}
+        \begin{tabular}{llccl}
+            \toprule
+            Hypothesis & Path & Coefficient & \pvalue & Decision \\
+            \midrule
+            H1 & Salmon Treats $\rightarrow$ Purring         & .84 & $<$ .001 & Supported     \\
+            H2 & Laser Pointer $\rightarrow$ Zoomies         & .76 & $<$ .001 & Supported     \\
+            H3 & Keyboard Sitting $\rightarrow$ Delay        & .65 & $<$ .001 & Supported     \\
+            H4 & Vacuum Sound $\rightarrow$ Flight           & .95 & $<$ .001 & Supported     \\
+            H5 & Catnip $\times$ Treat $\rightarrow$ Napping & .34 & .023     & Supported     \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}[flushleft]
+            \small
+            \item \textit{Note.} Standardized coefficients reported. Keyboard Sitting measures physical obstruction of the human worker. Flight measures speed of escape from the living room.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\subsubsection{Feline Behavioral Model}
+A path analysis was conducted to establish the Feline Motivation Model. The structural model demonstrated exceptional fit: $\chi^{2}(15) = 18.42$, $\pvalue = .24$, CFI = .98, TLI = .97. \Cref{fig:structural_model} shows the standardized path coefficients.
+
+% --- Structural model figure ---
+\begin{figure}[htbp]
+    \centering
+    \fbox{\parbox{0.8\textwidth}{\centering\vspace{2.5cm}
+        \textbf{Treats Incentive ($T_c$)} $\xrightarrow{0.84}$ \textbf{Purr Output ($d_{\text{purr}}$)} $\xrightarrow{0.55}$ \textbf{Napping Propensity ($N_s$)}\\
+        \vspace{1cm}
+        \textit{[Mediating Variable: Belly Rub Acceptance (Moderated by Cat Mood)]}
+        \vspace{2.5cm}}}
+    \caption{Structural Model of Feline Motivation and Napping Propensity}
+    \label{fig:structural_model}
+    \begin{figurenote}
+        All path coefficients are standardized. Solid lines represent significant paths ($\pvalue < .05$). Dashed lines represent nonsignificant paths.
+    \end{figurenote}
+\\
+\end{figure}
+
+\subsection{Qualitative Findings}
+
+Thematic analysis of the qualitative meow logs and physical observations yielded three key themes:
+
+\subsubsection{Theme 1: Box Occupation Dynamics}
+Participants displayed a universal preference for cardboard packaging over expensive beds. As Oliver (Participant 3, Persian) demonstrated by squeezing into a shoe box:
+\begin{quote}
+    If it fits, I sits. The volume of the container is inversely proportional to my urge to occupy it, regardless of comfort levels.
+\end{quote}
+
+\subsubsection{Theme 2: Auditory Cues and Immediate Response}
+The sound of a dry-kibble bag shaking acted as a universal interrupt vector, overriding any active catnaps or grooming routines. Milo (Siamese) showed immediate mobilization within 0.4 seconds of sound detection.
+
+\subsubsection{Theme 3: 3 AM Zoomies as a Communication Channel}
+Nocturnal sprints were identified not as random behaviors, but as a deliberate stakeholder management strategy intended to notify human project managers of empty kibble bowls.

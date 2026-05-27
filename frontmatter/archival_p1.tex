@@ -1,0 +1,61 @@
+% =============================================================================
+% frontmatter/archival_p1.tex — RU Archival Submission & Signatures Page
+% =============================================================================
+\thispagestyle{empty}%
+\singlespacing%
+
+% Define the custom signature line drawing command using TikZ
+\newcommand{\sigline}[2]{%
+  \begin{tikzpicture}[baseline={(0,-0.05)}]
+    \draw[line width=1.2pt] (0,0) -- (#1,0);
+    \draw[line width=1.2pt, dash pattern=on 0.8pt off 1.2pt] (#1,0) -- (#1+#2,0);
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  {\bfseries\Large \thesisTitle\par}
+  \vspace{1\baselineskip}
+  {\large \thesisAuthor\par}
+  \vspace{1.5\baselineskip}
+  {\large
+    Thesis of \thesisECTS{} ECTS credits submitted to the \thesisSchool{}\\
+    at \thesisUniversity{} in partial fulfillment of\\
+    the requirements for the degree of\\
+    \textbf{\thesisDegreeLong{} (\thesisDegreeAbbrv{}) in \thesisProgram{}}\par
+  }
+  \vspace{1.5\baselineskip}
+  {\large \thesisDate\par}
+\end{center}
+
+\vspace{3\baselineskip}
+
+% 1. Student Block
+\noindent\hspace{1.5cm}Student:\par
+\nopagebreak\vspace{0.2\baselineskip}
+\noindent\hspace{3.0cm}\sigline{3.5cm}{7.5cm}\par
+\nopagebreak\vspace{0.1\baselineskip}
+\noindent\hspace{4.0cm}\thesisAuthor\par
+
+\vspace{2.5\baselineskip}
+
+% 2. Supervisors Block
+\noindent\hspace{1.5cm}\ifx\thesisCoSupervisor\empty Supervisor:\else Supervisors:\fi\par
+\nopagebreak\vspace{0.2\baselineskip}
+\noindent\hspace{3.0cm}\sigline{3.5cm}{7.5cm}\par
+\nopagebreak\vspace{0.1\baselineskip}
+\noindent\hspace{4.0cm}\thesisSupervisor\par
+\ifx\thesisCoSupervisor\empty\else
+  \vspace{2.5\baselineskip}
+  \noindent\hspace{3.0cm}\sigline{3.5cm}{7.5cm}\par
+  \nopagebreak\vspace{0.1\baselineskip}
+  \noindent\hspace{4.0cm}\thesisCoSupervisor\par
+\fi
+
+\vspace{2.5\baselineskip}
+
+% 3. Examiner Block
+\noindent\hspace{1.5cm}Examiner:\par
+\nopagebreak\vspace{0.2\baselineskip}
+\noindent\hspace{3.0cm}\sigline{3.5cm}{7.5cm}\par
+\nopagebreak\vspace{0.1\baselineskip}
+\noindent\hspace{4.0cm}\thesisExaminer\par

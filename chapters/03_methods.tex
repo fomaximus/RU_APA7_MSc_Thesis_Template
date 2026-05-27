@@ -1,0 +1,48 @@
+% =============================================================================
+% chapters/03_methods.tex — Methods (Feline Theme)
+% =============================================================================
+
+\section{Methods}
+
+This section describes the research design, feline participants, data collection procedures, measures, and analytical strategy employed to investigate Feline Stakeholder Management (FSM). The study adhered to strict ethical guidelines regarding feline treats and was approved by the Household Sofa Preservation Committee.
+
+\subsection{Research Design}
+This study employs a mixed-methods sequential explanatory design \parencite{Creswell2018}, combining quantitative logging of cat behaviors with qualitative thematic analysis of low-pitched meows and tail movements. The research was split into two phases: a 14-day quantitative observation period followed by semi-structured qualitative meow interviews.
+
+\subsection{Feline Participants}
+A convenience sample of five domestic felines residing in the same household was selected for this study. The sample represents a diverse range of sizes, tempers, and levels of cooperation. \Cref{tab:demographics} outlines the demographic characteristics of the participants.
+
+% --- Feline demographics table ---
+\begin{table}[htbp]
+    \caption{Demographic Characteristics of Feline Participants}
+    \label{tab:demographics}
+    \begin{threeparttable}
+        \begin{tabular}{llrlr}
+            \toprule
+            Name & Breed & Age (years) & Temperament & Average Daily Nap Time (hours) \\
+            \midrule
+            Luna   & Maine Coon & 3.5 & Dictatorial & 14.5 \\
+            Simba  & Tabby      & 5.0 & Hyperactive & 12.0 \\
+            Oliver & Persian    & 2.0 & Extremely Aloof & 18.5 \\
+            Milo   & Siamese    & 4.0 & Vocal and Needy & 13.0 \\
+            Bella  & Ragdoll    & 1.5 & Easily Startled & 16.0 \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}[flushleft]
+            \small
+            \item \textit{Note.} Total Sample Size $N = 5$. All participant names have been kept un-anonymized because they cannot read.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\subsection{Measures and Data Collection}
+All behavioral variables were measured using a combination of automated sensors and human observations:
+\begin{description}
+    \item[Treat Consumption Rate ($T_c$):] Measured in treats per minute during sprint phases.
+    \item[Scratching Frequency ($f_{\text{scratch}}$):] The number of distinct sofa-scratching incidents per hour.
+    \item[Laser Pointer Responsiveness:] Assessed using a 7-point Likert-style scale (1 = \textit{complete indifference} to 7 = \textit{frantic high-speed wall chasing}).
+    \item[Purr Volume ($d_{\text{purr}}$):] Sound level measured in decibels using a calibrated microphone positioned at a distance of 10 centimeters from the participant's chest.
+\end{description}
+
+\subsection{Data Analysis}
+Quantitative data were analyzed using statistical packages in R \parencite{RCore2023}. Correlation analyses were conducted to examine the relationship between treat-based incentive packages and napping durations. Qualitative meow logs were analyzed using thematic analysis to identify recurring themes in feline negotiation styles \parencite{BraunClarke2006}.

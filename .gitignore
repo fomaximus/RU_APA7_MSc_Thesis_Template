@@ -1,0 +1,151 @@
+# =============================================================================
+# .gitignore — LaTeX Project
+# =============================================================================
+
+## Core LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Intermediate documents
+*.dvi
+*.xdv
+*-converted-to.*
+
+## Bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Packages auxiliary files
+*.alg
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lox
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.nls
+*.nlg
+*.snm
+*.vrb
+
+## knitr / Sweave
+*.concordance.tex
+
+## Latexian
+TSWLatexianTemp*
+
+## Texpad
+.texpadtmp
+
+## LyX
+*.lyx~
+
+## Minted
+_minted*
+*.pyg
+
+## endfloat
+*.ttt
+*.fff
+
+## Latexmk
+*.pre
+
+## pdfcomment
+*.upa
+*.upb
+
+## pythontex
+pythontex-files-*/
+
+## todonotes
+*.tdo
+
+## xindy
+*.xdy
+
+## xypic precompiled matrices
+*.xyc
+
+## WinEdt
+*.bak
+*.sav
+
+## Texlive
+*.dpth
+*.md5
+*.auxlock
+
+## xwatermark
+*.xwm
+
+## REVTeX
+*.ltx
+
+## ---------- OS & Editor ----------
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## VS Code
+.vscode/
+
+## JetBrains
+.idea/
+
+## Vim
+*.swp
+*.swo
+*~
+
+## Emacs
+\#*\#
+.\#*
+
+## ---------- Project-specific ----------
+
+## Output PDF (optional — uncomment to track PDF in git)
+# main.pdf
+
+## Temporary scratch files
+scratch/

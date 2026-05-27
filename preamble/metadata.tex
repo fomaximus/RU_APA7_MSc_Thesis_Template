@@ -1,0 +1,75 @@
+% =============================================================================
+% preamble/metadata.tex — Document Metadata (Variables with Mock Data)
+% =============================================================================
+%
+% All metadata is defined as LaTeX commands for easy reuse and modification.
+% Replace the mock values below with your actual information.
+%
+
+% --- Thesis Variables --------------------------------------------------------
+\newcommand{\thesisTitle}{%
+    Herding Cats: A Stakeholder Management Framework for %
+    Multi-Feline Agile Projects%
+}
+\newcommand{\thesisTitleIS}{%
+    Smölun katta: Rammakerfi um stýringu hagsmunaaðila í %
+    fjöl-katta liprum verkefnum%
+}
+\newcommand{\thesisShortTitle}{Herding Cats: Feline Stakeholder Management}
+\newcommand{\thesisAuthor}{Erwin Rudolf Josef Alexander Schrödinger}
+\newcommand{\thesisDepartment}{Department of Engineering}
+\newcommand{\thesisUniversity}{Reykjavik University}
+\newcommand{\thesisProgram}{Project Management}
+\newcommand{\thesisSupervisor}{Dr.\ Albert Einstein}
+\newcommand{\thesisCoSupervisor}{Dr.\ Marie Curie}
+\newcommand{\thesisDate}{May 2026}
+\newcommand{\thesisDateIS}{maí 2026}
+\newcommand{\thesisKeywords}{%
+    cat management, agile projects, feline stakeholders, %
+    conflict resolution, project management%
+}
+\newcommand{\thesisORCID}{https://orcid.org/0000-0002-1234-5678}
+\newcommand{\thesisORCIDiD}{0000-0002-1234-5678}
+
+% --- Reykjavik University Thesis Metadata -------------------------------------
+\newcommand{\thesisDegreeAbbrv}{M.Sc.}
+\newcommand{\thesisDegreeLong}{Master of Science}
+\newcommand{\thesisECTS}{30}
+\newcommand{\thesisSchool}{\thesisDepartment}
+\newcommand{\thesisGraduationYear}{2026}
+\newcommand{\thesisGraduationPlace}{Reykjavik, 2026}
+
+% Supervisors and Examiner detailed info for Title and Copyright pages
+\newcommand{\thesisSupervisorRole}{Supervisor}
+\newcommand{\thesisSupervisorAffiliation}{Professor, Institute for Advanced Study, Princeton, USA}
+\newcommand{\thesisCoSupervisorRole}{Co-supervisor}
+\newcommand{\thesisCoSupervisorAffiliation}{Professor, Sorbonne University, Paris, France}
+\newcommand{\thesisExaminerRole}{Examiner}
+\newcommand{\thesisExaminerAffiliation}{Professor, California Institute of Technology, Pasadena, USA}
+
+\newcommand{\thesisSupervisors}{\thesisSupervisor{} (\thesisSupervisorRole{}) and \thesisCoSupervisor{} (\thesisCoSupervisorRole{})}
+\newcommand{\thesisExaminer}{Dr.\ Richard Feynman}
+
+% --- APA7 Title Page Commands ------------------------------------------------
+\title{\thesisTitle}
+\shorttitle{\thesisShortTitle}
+\author{\thesisAuthor}
+\authorsaffiliations{\thesisDepartment, \thesisUniversity}
+
+% Author note — includes ORCID, supervisor acknowledgment, correspondence
+\authornote{%
+    \addORCIDlink{\thesisAuthor}{\thesisORCID}
+
+    This thesis is submitted in partial fulfillment of the requirements for the
+    degree of \thesisDegreeLong{} in \thesisProgram{} at \thesisUniversity.
+
+    Supervisor: \thesisSupervisor. Co-supervisor: \thesisCoSupervisor.
+
+    Correspondence concerning this thesis should be addressed to
+    \thesisAuthor, \thesisDepartment, \thesisUniversity,
+    Menntavegur~1, 102~Reykjav\'{i}k, Iceland.
+    E-mail: \href{mailto:schrodinger@ru.is}{schrodinger@ru.is}
+}
+
+% Keywords — rendered after the abstract in man mode
+\keywords{\thesisKeywords}

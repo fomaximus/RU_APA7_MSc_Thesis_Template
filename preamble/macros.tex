@@ -1,0 +1,59 @@
+% =============================================================================
+% preamble/macros.tex — Custom Commands & Abbreviations
+% =============================================================================
+
+% --- Common Latin Abbreviations (APA style: no italics) ----------------------
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}
+\newcommand{\cf}{cf.\xspace}
+\newcommand{\etal}{et al.\xspace}
+\newcommand{\vs}{vs.\xspace}
+\newcommand{\viz}{viz.\xspace}
+\usepackage{xspace}  % Ensure correct spacing after commands
+
+% --- Statistical & Mathematical Notation (APA style: italicized) -------------
+% Common statistical symbols — APA 7 requires italic for statistical symbols
+\newcommand{\pvalue}{\textit{p}}
+\newcommand{\Fstat}{\textit{F}}
+\newcommand{\tstat}{\textit{t}}
+\newcommand{\df}{\textit{df}}
+\newcommand{\Nobs}{\textit{N}}
+\newcommand{\nobs}{\textit{n}}
+\newcommand{\Mstat}{\textit{M}}
+\newcommand{\SDstat}{\textit{SD}}
+\newcommand{\SEstat}{\textit{SE}}
+\newcommand{\CI}{\text{CI}}
+\newcommand{\rstat}{\textit{r}}
+\newcommand{\Rsq}{\textit{R}\textsuperscript{2}}
+\newcommand{\betastat}{\ensuremath{\beta}}
+\newcommand{\alphastat}{\ensuremath{\alpha}}
+\newcommand{\etasq}{\ensuremath{\eta^{2}}}
+\newcommand{\cohend}{\textit{d}}
+
+% --- Effect Size Reporting (APA style) ----------------------------------------
+% Usage: \effectsize{d}{0.45}  →  d = 0.45
+\newcommand{\effectsize}[2]{$#1 = #2$}
+
+% --- Confidence Interval Reporting (APA style) --------------------------------
+% Usage: \confint{95}{0.35}{0.78}  →  95% CI [0.35, 0.78]
+\newcommand{\confint}[3]{#1\%~\CI~[#2,~#3]}
+
+% --- Inline Statistics Reporting Template (APA style) -------------------------
+% Usage: \Ftest{2}{47}{4.56}{.02}  →  F(2, 47) = 4.56, p = .02
+\newcommand{\Ftest}[4]{\Fstat(#1,~#2)~=~#3,~\pvalue~=~#4}
+
+% Usage: \ttest{47}{2.34}{.03}  →  t(47) = 2.34, p = .03
+\newcommand{\ttest}[3]{\tstat(#1)~=~#2,~\pvalue~=~#3}
+
+% --- Placeholder / Draft Markers (remove in final version) --------------------
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\fixme}[1]{\textcolor{orange}{\textbf{[FIXME: #1]}}}
+\newcommand{\draftnote}[1]{\textcolor{blue}{\textbf{[NOTE: #1]}}}
+
+% --- Research-Specific Abbreviations ------------------------------------------
+% Add your domain-specific abbreviations here:
+\newcommand{\DT}{DT\xspace}             % Digital Transformation
+\newcommand{\OR}{OR\xspace}             % Organizational Resilience
+\newcommand{\SME}{SME\xspace}           % Small and Medium-sized Enterprise
+\newcommand{\SMEs}{SMEs\xspace}         % Small and Medium-sized Enterprises
+\newcommand{\RQ}{RQ\xspace}             % Research Question

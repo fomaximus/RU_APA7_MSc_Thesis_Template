@@ -1,0 +1,69 @@
+%% Reykjavik University Logo in Tikz
+%% Logo designed by graphic designers Alli Metal and Annetta Scheving in 2009
+%% Conversion by Johannes Berger Gunnarson <johannesg at RU dot IS> 2022-03-17
+\PassOptionsToPackage{table}{xcolor}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{decorations.text,decorations.shapes,decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta,bending}
+\usetikzlibrary{positioning}
+
+\definecolor{HRred}{RGB}{230 45 9} %Rétt, fengið frá skóla
+%\colorlet{HRgray}{gray!10!black!70} %gamalt
+\definecolor{HRgray}{RGB}{72 72 72}%Rétt, fengið frá skóla
+\newcommand{\charCommand}[1]{\hspace{0.5mm}#1\hspace{0.5mm}}
+\newcommand{\charCommandROT}[1]{\hspace{0.5mm}\rotatebox[origin = c]{180}{#1}\hspace{0.5mm}}
+% Use TeX Gyre Heros (tgheros) to replace copyrighted font.
+\RequirePackage{tgheros}
+\newfontfamily\rufont{texgyreheros}[
+  Extension = .otf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic
+]
+
+\newcommand\rulogo{\drawrulogo{0.4}}%most documents need a smaller logo
+\newcommand{\drawrulogo}[1]{
+  %ARG:  scale based upon 6cm = 1
+  \phantom{bla}
+  \begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+    \useasboundingbox (-6cm, -6cm)rectangle (6cm, 6cm);
+    \clip[overlay]
+    (-6cm, -6cm) rectangle (6cm, 6cm)
+    (0, 0) circle (1.13cm);
+    \pgfmathsetmacro{\Null}{-17} 
+    \pgfmathsetmacro{\hringSidast}{\Null}
+    \foreach \horn/\rad in{43/3.45, 42/4.08,  6/2.1, 26/3.45, 5/2.85, 65/4.08, 4/3.4, 12/2.8, 8.5/0.5, 1.5/3.4, 25/4.08, 9/2.85, 11/2.05, 9/0.5, 45/4.08, 11/3.43, 9/2.85, 24/4.08, 4/2}
+    {
+      \pgfmathsetmacro{\hringNu}{\hringSidast+\horn}
+      \draw [HRred, fill=HRred]  (0,0) --+(\hringSidast:\rad) arc(\hringSidast:\hringNu:\rad)--(0,0);
+      \global\let\hringSidast=\hringNu
+    }                
+    {%\large
+      \bfseries\fontsize{6pt}{6pt}\rufont
+      \draw [rotate = -2,decorate,decoration={text effects along path,
+        text={H{Á}SK{Ó}LINN {Í} REYKJAV{Í}K},
+        text align=center,
+        text effects/.cd,
+        text along path, scale text to path,
+        characters={HRgray,character command=\charCommand}}
+      ]
+      {(180:4.8) arc (180:4:4.8) };
+      
+      % \draw[rotate = -5] (0,0) --(180:4.8) arc (180:10:4.8)--cycle;
+      
+      \draw [ rotate = -8,decorate,decoration={text effects along path,
+        text={YTISREVINU KIVAJKYER},
+        text align=center,
+        text effects/.cd,
+        text along path, scale text to path,
+        characters={HRgray,character command=\charCommandROT}}
+      ]
+      {(0:4.8) arc (0:-164:4.8) };
+    }
+    % \draw[rotate = 5] (0,0) --(180:4.8) arc (180:350:4.8)--cycle;
+  \end{tikzpicture}
+  \phantom{bla}
+}

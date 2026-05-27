@@ -1,0 +1,82 @@
+% =============================================================================
+% preamble/packages.tex — Package Declarations
+% =============================================================================
+%
+% NOTE: The apa7 class internally loads many packages including:
+%   hyperref, graphicx, booktabs, threeparttable, caption, float,
+%   xcolor, fancyhdr, longtable, etoolbox, geometry
+% We use \PassOptionsToPackage for packages loaded by apa7 and only
+% \usepackage for packages NOT loaded by apa7.
+%
+
+% --- Hyperref options (must come BEFORE \documentclass or apa7 loads it) -----
+% Since this file is loaded after \documentclass, we use \hypersetup instead.
+% The actual \hypersetup call is in formatting.tex.
+
+% --- Language & Encoding ----------------------------------------------------
+\usepackage[american]{babel}        % APA requires American English
+\usepackage{csquotes}               % Context-sensitive quotation marks
+
+% --- Fonts (LuaLaTeX) -------------------------------------------------------
+% apa7 auto-detects LuaLaTeX and loads fontspec internally.
+% Override default font to Times New Roman if available, else TeX Gyre Termes.
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}       % Times New Roman equivalent (freely available)
+\setsansfont{TeX Gyre Heros}        % Helvetica equivalent for sans-serif text
+% If Times New Roman is installed on your system, uncomment the next line:
+% \setmainfont{Times New Roman}
+
+% --- Bibliography (APA 7th Edition) -----------------------------------------
+\usepackage[%
+    style=apa,                       % APA 7th edition citation style
+    sortcites=true,                  % Sort multiple citations
+    sorting=nyt,                     % Sort bibliography: Name → Year → Title
+    backend=biber,                   % Use biber as bibliography processor
+    uniquename=false,                % Avoid disambiguation of author names
+    uniquelist=false                 % Avoid disambiguation of author lists
+]{biblatex}
+\addbibresource{references/references.bib}
+
+% --- Mathematics -------------------------------------------------------------
+\usepackage{amsmath}                 % Enhanced math environments
+\usepackage{amssymb}                 % Extended math symbols
+\usepackage{mathtools}               % Extensions to amsmath
+
+% --- Tables (booktabs, threeparttable already loaded by apa7) -----------------
+\usepackage{tabularx}                % Tables with auto-width columns
+\usepackage{multirow}                % Multi-row table cells
+
+% --- Figures & Graphics (graphicx already loaded by apa7) --------------------
+\graphicspath{{figures/}}            % Default graphics search path
+\usepackage{subcaption}              % Sub-figures and sub-captions
+
+% --- Typography & Micro-typesetting ------------------------------------------
+\usepackage{microtype}               % Protrusion and expansion for better typography
+\usepackage{enumitem}                % Customizable list environments
+\usepackage{setspace}                % Spacing control (beyond apa7 defaults)
+\usepackage{ragged2e}                % Justification commands (e.g., \justifying)
+
+% --- Cross-references (hyperref already loaded by apa7) ----------------------
+\usepackage[nameinlink, noabbrev]{cleveref}  % Smart cross-referencing (\cref)
+
+% --- RU Thesis Front Matter Packages -----------------------------------------
+\usepackage{preamble/rulogo}         % TikZ drawing of the official RU logo
+\usepackage{ccicons}                 % Creative Commons icons
+\usepackage{orcidlink}               % ORCID link icon
+
+% --- Code Listings (optional) ------------------------------------------------
+% Uncomment if your thesis includes code snippets:
+% \usepackage{listings}
+% \lstset{%
+%     basicstyle=\ttfamily\small,
+%     breaklines=true,
+%     numbers=left,
+%     numberstyle=\tiny,
+%     frame=single,
+%     captionpos=b
+% }
+
+% --- Miscellaneous -----------------------------------------------------------
+\usepackage{lipsum}                  % Dummy text for development (remove in final)
+\usepackage{pdflscape}               % Landscape pages in portrait documents
+\usepackage{afterpage}               % Execute commands after current page
