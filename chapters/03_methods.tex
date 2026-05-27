@@ -1,48 +1,44 @@
 % =============================================================================
-% chapters/03_methods.tex — Methods (Feline Theme)
+% chapters/03_methods.tex — Methods
 % =============================================================================
 
 \section{Methods}
 
-This section describes the research design, feline participants, data collection procedures, measures, and analytical strategy employed to investigate Feline Stakeholder Management (FSM). The study adhered to strict ethical guidelines regarding feline treats and was approved by the Household Sofa Preservation Committee.
+This chapter describes the research design, participants, data collection procedures, measures, and analytical strategy employed in your study. Provide enough detail so that other researchers could replicate your study.
 
 \subsection{Research Design}
-This study employs a mixed-methods sequential explanatory design \parencite{Creswell2018}, combining quantitative logging of cat behaviors with qualitative thematic analysis of low-pitched meows and tail movements. The research was split into two phases: a 14-day quantitative observation period followed by semi-structured qualitative meow interviews.
+Describe the overall research design (e.g., quantitative, qualitative, or mixed-methods). For example, mixed-methods studies frequently employ a sequential explanatory design \parencite{Creswell2018}.
 
-\subsection{Feline Participants}
-A convenience sample of five domestic felines residing in the same household was selected for this study. The sample represents a diverse range of sizes, tempers, and levels of cooperation. \Cref{tab:demographics} outlines the demographic characteristics of the participants.
+\subsection{Participants and Sampling}
+Describe the target population and your sampling strategy. Present the demographic characteristics of your sample in an APA-style table, such as \Cref{tab:demographics}.
 
-% --- Feline demographics table ---
+% --- Demographics table ---
 \begin{table}[htbp]
-    \caption{Demographic Characteristics of Feline Participants}
+    \caption{Demographic Characteristics of Study Participants}
     \label{tab:demographics}
     \begin{threeparttable}
-        \begin{tabular}{llrlr}
+        \begin{tabular}{lrr}
             \toprule
-            Name & Breed & Age (years) & Temperament & Average Daily Nap Time (hours) \\
+            Characteristic & Number ($N$) & Percentage (\%) \\
             \midrule
-            Luna   & Maine Coon & 3.5 & Dictatorial & 14.5 \\
-            Simba  & Tabby      & 5.0 & Hyperactive & 12.0 \\
-            Oliver & Persian    & 2.0 & Extremely Aloof & 18.5 \\
-            Milo   & Siamese    & 4.0 & Vocal and Needy & 13.0 \\
-            Bella  & Ragdoll    & 1.5 & Easily Startled & 16.0 \\
+            \textbf{Gender} & & \\
+            \quad Male   & 45 & 45.0 \\
+            \quad Female & 55 & 55.0 \\
+            \textbf{Age Group} & & \\
+            \quad 18–34  & 30 & 30.0 \\
+            \quad 35–50  & 50 & 50.0 \\
+            \quad 51+    & 20 & 20.0 \\
             \bottomrule
         \end{tabular}
         \begin{tablenotes}[flushleft]
             \small
-            \item \textit{Note.} Total Sample Size $N = 5$. All participant names have been kept un-anonymized because they cannot read.
+            \item \textit{Note.} Total Sample Size $N = 100$. Percentages may not sum to 100 due to rounding.
         \end{tablenotes}
     \end{threeparttable}
 \end{table}
 
 \subsection{Measures and Data Collection}
-All behavioral variables were measured using a combination of automated sensors and human observations:
-\begin{description}
-    \item[Treat Consumption Rate ($T_c$):] Measured in treats per minute during sprint phases.
-    \item[Scratching Frequency ($f_{\text{scratch}}$):] The number of distinct sofa-scratching incidents per hour.
-    \item[Laser Pointer Responsiveness:] Assessed using a 7-point Likert-style scale (1 = \textit{complete indifference} to 7 = \textit{frantic high-speed wall chasing}).
-    \item[Purr Volume ($d_{\text{purr}}$):] Sound level measured in decibels using a calibrated microphone positioned at a distance of 10 centimeters from the participant's chest.
-\end{description}
+Describe the instruments, scales, and data collection procedures used. Explain what variables were measured, what scales were used (e.g. 7-point Likert scales), and how reliability was established.
 
 \subsection{Data Analysis}
-Quantitative data were analyzed using statistical packages in R \parencite{RCore2023}. Correlation analyses were conducted to examine the relationship between treat-based incentive packages and napping durations. Qualitative meow logs were analyzed using thematic analysis to identify recurring themes in feline negotiation styles \parencite{BraunClarke2006}.
+Outline the statistical techniques or qualitative analysis methods used to analyze the collected data. Mention any software packages utilized (e.g., R version 4.3.1 \parencite{RCore2023}).

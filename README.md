@@ -2,6 +2,14 @@
 
 > A well-architected LaTeX project using the CTAN **apa7** document class for a Master's thesis at Reykjavik University, formatted for peer-reviewed journal publication.
 
+## Git Branches & Demos
+
+This repository is organized into two branches:
+- **`main` (Clean Template)**: The clean, production-ready template. It has empty placeholder chapters and metadata, ready for you to input your actual thesis content. The included `main.pdf` in this branch is the compiled empty template.
+- **`feline-demo` (Demo Template)**: A fully populated mock thesis about *Stakeholder Management for a Group of Cats* under the dummy author *Erwin Schrödinger* and historical supervisors. This branch serves as a humorous demonstration of the template's layouts, tables, and figures. The compiled output in this branch is `main.pdf`.
+
+A GitHub Actions workflow automatically compiles the PDFs and attaches them as release assets upon code pushes.
+
 ## Prerequisites
 
 | Requirement | Version | Notes |
