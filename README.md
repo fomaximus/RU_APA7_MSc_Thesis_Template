@@ -91,7 +91,8 @@ RU_APA7_Thesis/
 ├── .gitignore                  # LaTeX-specific gitignore
 ├── .latexmkrc                  # Latexmk configuration
 ├── LICENSE                     # MIT License
-└── README.md                   # This file
+├── README.md                   # This file
+└── antigravity.md              # AI agent guidelines (antigravity.md)
 ```
 
 ## APA7 Configuration
