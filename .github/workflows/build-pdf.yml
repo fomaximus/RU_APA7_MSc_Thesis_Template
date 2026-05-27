@@ -1,0 +1,65 @@
+name: Build and Release Thesis PDF
+
+on:
+  push:
+    branches:
+      - main
+      - feline-demo
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          compiler: latexmk
+          args: -lualatex -bibtex -f -interaction=noninteractive
+
+      - name: Determine Output Filename
+        id: names
+        run: |
+          if [ "${{ github.ref_name }}" = "feline-demo" ]; then
+            echo "filename=RU_MSc_Thesis_Feline_Demo.pdf" >> $GITHUB_OUTPUT
+          else
+            echo "filename=RU_MSc_Thesis_Template.pdf" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Rename PDF
+        run: cp main.pdf ${{ steps.names.outputs.filename }}
+
+      - name: Create Tag and Release (on branch push)
+        if: github.ref_type != 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: release-${{ github.ref_name }}-${{ github.run_number }}
+          name: Build for branch ${{ github.ref_name }} (Run #${{ github.run_number }})
+          body: |
+            Automatically compiled PDF for branch `${{ github.ref_name }}`.
+            Commit: ${{ github.sha }}
+          files: |
+            ${{ steps.names.outputs.filename }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Tag and Release (on tag push)
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release ${{ github.ref_name }}
+          body: |
+            Official Release version ${{ github.ref_name }}.
+            Commit: ${{ github.sha }}
+          files: |
+            ${{ steps.names.outputs.filename }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
